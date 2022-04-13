@@ -6,7 +6,7 @@
     <!-- NOTE: If web fonts are not required, lines 9 - 26 can be safely removed. -->
 
     <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
-    <!--[if mso]>
+    <!--[if gte mso 9]>
             <style type="text/css">
                 * {
                     font-family: Verdana, Geneva, sans-serif !important;
@@ -15,7 +15,7 @@
         <![endif]-->
 
     <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
-    <!--[if !mso]><!-->
+    <!--[else]><!-->
     <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -267,7 +267,7 @@
     <table border="0" cellpadding="0" cellspacing="0" bgcolor="#121423" width="600"
         style="margin:0 auto; padding: 0; table-layout: auto; width: 600px; background-color: #121423;">
         <tr>
-            <td>
+            <td style="font-size: 0;">
                 <img alt="" width="100%" style="width: 100%;"
                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAACRCAYAAAAfHsaJAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAXnSURBVHgB7d3PblpHFMBhWmUbkKruEnvTlSuzravCsl7Eef/nae+Ax54QsAGf+2fufJ8UEUge4Kc558795bff//hvAQBAmF8XAACEElgAAMEEFgBAMIEFABBMYAEABBNYAADBBBYAQDCBBQAQTGABAAQTWAAAwQQWAEAwgQUAEExgAQAEE1gAAMEEFgBAMIEFABBMYAEABBNYAADBBBYAQDCBBQAQTGABAAQTWAAAwQQWAEAwgQUAEExgAQAEE1gAAMEEFgBAMIEFABBMYAEABBNYAADBBBYAQDCBBQAQTGABAAQTWAAAwQQWAEAwgQUAEExgAQAEE1gAAMEEFgBAMIEFABBMYAEABBNYAADBBBYAQDCBBQAQTGABAAQTWAAAwT4tAAAac3Pzdfd5e/Nl0QeBBQBUbbn8vFitVt2fz10wfd19rlbL7vfl4va2+77cf7+9/bJYdp+r7ve+CSwAYFLK06UURfm3FEm7UOp+3//988v/nRqBBQD05tTp0kswdf++O2Xqfh/qdGkIAgsAONuxYCpPl8pgmurp0hAEFgA0LkdTHskd7i/N8YSpbwILAGboWDQdG8u1fMrUJ4EFABW5eR7LleO5w5Mm0TQ+gQUAI3vrtCn/ZjxXF4EFAD3KJ07r+zvh1BCBBQBXyKdO+3AyquNHAgsADpR7TrtTpucn6pw6cS6BBUBTDuPpcGTn1IkIAguA2Tg1thNPDE1gAVCNcmG83Hlar++M7ZgUgQXAJJw6fSq/Qy0EFgCDKAOq3H3anUalu5+cPjEjAguAEAIKXgksAM6WoimP7O7v/xRQcILAAuDFsSVyT+DB5QQWQEOOjfFSQHkKD2IJLICZWT6/qqU8hfIkHgxLYAFUqBzl2YWC6RFYABN1bKF8u/nLKA8qILAARnQYUfahYB4EFkDPyp0o4zxog8ACCHBqsVxEQZsEFsAF8kgvXXGwO416ftGwp/OAksACOHA40st7USIKOJfAApp1eBplpAdEEVjArB1bME9XHTiNAvoksIBZWO52ofbjPGM9YGwCC6iKsR5QA4EFTJKQAmomsIBRCSlgjgQWMAghBbREYAGhhBSAwAKulJ/ay9cfCCmAVwILeJNbzQEuJ7CAFyma8iWcKaiEFMB1BBY0yHgPoF8CC2buPp1EFeO9zfZBSAH0TGDBTKRTqe3m7x+e3ktxBcDwBBZUKO9KOZUCmCaBBRNmVwqgTgILJiI/uZd3pjzBB1AvgQUjKEd8u6jqYsqpFMB8CCzoUb6kc7t5MOIDaIjAgiCH+1L5wk4A2iOw4AqHVyKIKQBKAgvekZfPU0xt/nmwfA7AuwQWFHJMbTYP7pcC4GoCi2aJKQD6IrBoQt6ZyvdMiSkA+iSwmJ1yAd3OFABjEFhUzdUIAEyRwKIaYgqAWggsJiu/k28fUw+77wBQA4HFJHg3HwBzIrAYXDnqS0vonugDYG4EFr1Lo738smN7UwC0QGARyqgPAAQWH2DUBwDHCSzOVp5OeaoPAE4TWBxVvlomvavPqA8Aziew2MmnU5suqiyiA8DHCKwG5d2pbdqbcjoFAOEEVgPK3anvT/86nQKAngmsmfFkHwCMT2BVLgXV96fHl3un0sgPABiXwKqMW9EBYPoE1oSV476nb4+W0QGgEgJrQvLdU2nMZ9wHAPUSWCNy9xQAzJPAGlDen/J0HwDMm8Dqics8AaBdAiuI/SkAIBNYVyrvn9pfm3C3AABIBNaZLKQDAOcSWCekgErv7XOhJwBwKYH1rAyqp+7TQjoAcK1mA8uVCQBAX5oJLEEFAAxltoElqACAscwmsAQVADAV1QaWoAIApqqawPKUHwBQi8kGlqACAGo1mcDKr55xUzoAULvRAqt8l186qRJUAMBcDBZYKajW627c9+3Ry5EBgFnrLbByUG3TU36b/R8AgBaEBlaKqHV3MpVOqe7XdxbTAYAmfSiw8pN+7qICAHh1UWB50g8A4H1vBpbFdACAy/0UWGmPKi+m26MCALjcJ3tUAACx/gf1Wwod/yITNwAAAABJRU5ErkJggg==">
             </td>
